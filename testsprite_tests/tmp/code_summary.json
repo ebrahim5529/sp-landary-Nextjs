@@ -1,0 +1,339 @@
+{
+  "tech_stack": [
+    "TypeScript",
+    "Next.js 16.1.6",
+    "React 19.2.4",
+    "Tailwind CSS 4.0",
+    "Radix UI",
+    "TanStack Query",
+    "React Hook Form",
+    "Zod",
+    "date-fns",
+    "Recharts",
+    "React Router DOM",
+    "Lucide React"
+  ],
+  "features": [
+    {
+      "name": "Authentication",
+      "description": "نظام المصادقة والتفويض للمستخدمين والإداريين",
+      "files": [
+        "src/app/auth/page.tsx",
+        "src/contexts/AuthContext.tsx",
+        "src/contexts/ClientAuthProvider.tsx",
+        "src/components/ProtectedRoute.tsx",
+        "src/components/common/RoleBasedRoute.tsx",
+        "src/components/admin/AdminProtectedRoute.tsx"
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "description": "لوحة التحكم الرئيسية مع الإحصائيات والرسوم البيانية",
+      "files": [
+        "src/app/dashboard/page.tsx",
+        "src/components/dashboard/DashboardLayout.tsx",
+        "src/components/dashboard/AppSidebar.tsx",
+        "src/components/dashboard/TodayStats.tsx",
+        "src/components/dashboard/DepartmentCards.tsx",
+        "src/components/dashboard/OperationalCharts.tsx",
+        "src/components/dashboard/TimeTracker.tsx"
+      ]
+    },
+    {
+      "name": "Cashier Interface",
+      "description": "واجهة الكاشير لاستقبال الطلبات وإنشاء الفواتير",
+      "files": [
+        "src/app/dashboard/cashier/page.tsx",
+        "src/components/cashier/CartPanel.tsx",
+        "src/components/cashier/CustomerSelector.tsx",
+        "src/components/cashier/InvoiceList.tsx",
+        "src/components/cashier/InvoicePreview.tsx",
+        "src/components/cashier/ItemSelector.tsx",
+        "src/components/cashier/PaymentForm.tsx",
+        "src/components/cashier/ProductGrid.tsx",
+        "src/components/cashier/ServiceSelector.tsx"
+      ]
+    },
+    {
+      "name": "Customer Management",
+      "description": "إدارة العملاء مع قاعدة بيانات شاملة وسجل الطلبات",
+      "files": [
+        "src/app/dashboard/customers/page.tsx",
+        "src/components/customers/CustomerList.tsx",
+        "src/components/customers/CustomerForm.tsx",
+        "src/components/customers/CustomerDetail.tsx",
+        "src/components/customers/ExportDialog.tsx"
+      ]
+    },
+    {
+      "name": "Invoice Management",
+      "description": "إدارة الفواتير والطلبات مع تتبع الحالة",
+      "files": [
+        "src/app/dashboard/invoices/page.tsx",
+        "src/components/invoices/InvoiceList.tsx",
+        "src/components/invoices/InvoiceForm.tsx",
+        "src/components/invoices/InvoiceDetail.tsx",
+        "src/components/invoices/InvoicePreview.tsx",
+        "src/utils/invoice.ts"
+      ]
+    },
+    {
+      "name": "Department Management",
+      "description": "إدارة الأقسام الرئيسية والفرعية للمغسلة",
+      "files": [
+        "src/app/dashboard/departments/page.tsx",
+        "src/components/departments/DepartmentList.tsx",
+        "src/components/departments/DepartmentForm.tsx"
+      ]
+    },
+    {
+      "name": "Sub-items Management",
+      "description": "إدارة القطع الفرعية (Sub-items) لكل قسم",
+      "files": [
+        "src/app/dashboard/sub-items/page.tsx",
+        "src/app/dashboard/subitems/page.tsx",
+        "src/components/subitems/SubItemList.tsx",
+        "src/components/subitems/SubItemForm.tsx"
+      ]
+    },
+    {
+      "name": "Services Management",
+      "description": "إدارة الخدمات والقطع المتاحة",
+      "files": [
+        "src/app/dashboard/services/page.tsx",
+        "src/components/services/ServiceList.tsx",
+        "src/components/services/ServiceForm.tsx"
+      ]
+    },
+    {
+      "name": "Employee Management",
+      "description": "إدارة الموظفين والأدوار والصلاحيات",
+      "files": [
+        "src/app/dashboard/employees/page.tsx",
+        "src/components/employees/EmployeeList.tsx",
+        "src/components/employees/EmployeeForm.tsx"
+      ]
+    },
+    {
+      "name": "Attendance Tracking",
+      "description": "نظام الحضور والانصراف للموظفين",
+      "files": [
+        "src/app/dashboard/attendance/page.tsx",
+        "src/components/attendance/AttendanceList.tsx",
+        "src/components/attendance/EmployeeAttendance.tsx",
+        "src/utils/timeTracking.ts"
+      ]
+    },
+    {
+      "name": "Salary Management",
+      "description": "إدارة الرواتب والحوافز للموظفين",
+      "files": [
+        "src/app/dashboard/salaries/page.tsx",
+        "src/components/salaries/SalaryList.tsx",
+        "src/components/salaries/SalaryForm.tsx"
+      ]
+    },
+    {
+      "name": "Device Management",
+      "description": "إدارة الأجهزة المستخدمة في النظام مع تتبع الحالة",
+      "files": [
+        "src/app/dashboard/devices/page.tsx",
+        "src/components/devices/DeviceList.tsx",
+        "src/components/devices/DeviceForm.tsx"
+      ]
+    },
+    {
+      "name": "Product Management",
+      "description": "إدارة المنتجات والمخزون",
+      "files": [
+        "src/app/dashboard/products/page.tsx",
+        "src/components/products/ProductList.tsx",
+        "src/components/products/ProductForm.tsx"
+      ]
+    },
+    {
+      "name": "Financial Management",
+      "description": "إدارة الحسابات المالية والإيرادات والمصروفات",
+      "files": [
+        "src/app/dashboard/financial/page.tsx",
+        "src/app/dashboard/financial/payments/page.tsx",
+        "src/app/dashboard/financial/revenues/page.tsx",
+        "src/components/financial/PaymentList.tsx",
+        "src/components/financial/RevenueList.tsx"
+      ]
+    },
+    {
+      "name": "Coupon Management",
+      "description": "نظام القسائم والخصومات",
+      "files": [
+        "src/app/dashboard/coupons/page.tsx",
+        "src/components/coupons/CouponList.tsx",
+        "src/components/coupons/CouponForm.tsx"
+      ]
+    },
+    {
+      "name": "Reports",
+      "description": "التقارير والتحليلات الشاملة",
+      "files": [
+        "src/app/dashboard/reports/page.tsx",
+        "src/components/reports/CustomerReport.tsx",
+        "src/components/reports/FinancialReport.tsx",
+        "src/components/reports/OperationalReport.tsx"
+      ]
+    },
+    {
+      "name": "Work Sections",
+      "description": "أقسام العمل (استلام، فرز، غسيل، كوي)",
+      "files": [
+        "src/app/dashboard/work-sections/page.tsx",
+        "src/app/dashboard/work-sections/[section]/page.tsx",
+        "src/components/work-sections/WorkSectionView.tsx"
+      ]
+    },
+    {
+      "name": "Settings",
+      "description": "إعدادات النظام والمغسلة",
+      "files": [
+        "src/app/dashboard/settings/page.tsx",
+        "src/components/settings/SettingsForm.tsx",
+        "src/components/settings/ProfileSettings.tsx"
+      ]
+    },
+    {
+      "name": "Admin Panel",
+      "description": "لوحة تحكم الإدارة للمنصة",
+      "files": [
+        "src/app/admin/page.tsx",
+        "src/app/admin/layout.tsx",
+        "src/app/admin/laundries/page.tsx",
+        "src/app/admin/laundries/[id]/page.tsx",
+        "src/app/admin/registrations/page.tsx",
+        "src/app/admin/users/page.tsx",
+        "src/app/admin/settings/page.tsx",
+        "src/app/admin/analytics/page.tsx",
+        "src/components/admin/AdminLayout.tsx",
+        "src/components/admin/AdminSidebar.tsx",
+        "src/components/admin/AdminStats.tsx",
+        "src/components/admin/AdminCharts.tsx",
+        "src/components/admin/UserManagement.tsx",
+        "src/components/admin/RegistrationRequestList.tsx",
+        "src/components/admin/SystemSettings.tsx",
+        "src/components/admin/SEOSettings.tsx"
+      ]
+    },
+    {
+      "name": "Subscription Management",
+      "description": "إدارة الاشتراكات والخطط",
+      "files": [
+        "src/app/dashboard/subscription/page.tsx",
+        "src/app/dashboard/subscriptions/page.tsx",
+        "src/components/subscriptions/SubscriptionList.tsx",
+        "src/components/subscriptions/SubscriptionForm.tsx"
+      ]
+    },
+    {
+      "name": "Supplier Management",
+      "description": "إدارة الموردين",
+      "files": [
+        "src/app/dashboard/suppliers/page.tsx",
+        "src/components/suppliers/SupplierList.tsx",
+        "src/components/suppliers/SupplierForm.tsx"
+      ]
+    },
+    {
+      "name": "Package Management",
+      "description": "إدارة الباقات والخطط",
+      "files": [
+        "src/app/dashboard/packages/page.tsx",
+        "src/components/packages/PackageList.tsx",
+        "src/components/packages/PackageForm.tsx"
+      ]
+    },
+    {
+      "name": "Website Pages",
+      "description": "صفحات الموقع الرئيسية",
+      "files": [
+        "src/app/page.tsx",
+        "src/app/signup/page.tsx",
+        "src/app/privacy-policy/page.tsx",
+        "src/app/terms-of-service/page.tsx",
+        "src/components/Navbar.tsx",
+        "src/components/Hero.tsx",
+        "src/components/Services.tsx",
+        "src/components/Stats.tsx",
+        "src/components/HowItWorks.tsx",
+        "src/components/Pricing.tsx",
+        "src/components/Footer.tsx"
+      ]
+    },
+    {
+      "name": "Error Handling",
+      "description": "معالجة الأخطاء والصفحات الخاصة",
+      "files": [
+        "src/app/error.tsx",
+        "src/app/not-found.tsx",
+        "src/app/401/page.tsx",
+        "src/app/403/page.tsx",
+        "src/app/500/page.tsx",
+        "src/components/common/ErrorBoundary.tsx",
+        "src/components/common/ErrorPage.tsx"
+      ]
+    },
+    {
+      "name": "UI Components",
+      "description": "مكونات واجهة المستخدم من shadcn/ui و Radix UI",
+      "files": [
+        "src/components/ui/button.tsx",
+        "src/components/ui/card.tsx",
+        "src/components/ui/dialog.tsx",
+        "src/components/ui/form.tsx",
+        "src/components/ui/input.tsx",
+        "src/components/ui/table.tsx",
+        "src/components/ui/tabs.tsx",
+        "src/components/ui/toast.tsx",
+        "src/components/ui/tooltip.tsx"
+      ]
+    },
+    {
+      "name": "Utilities",
+      "description": "دوال مساعدة ومكتبات",
+      "files": [
+        "src/lib/utils.ts",
+        "src/utils/export.ts",
+        "src/utils/invoice.ts",
+        "src/utils/name.ts",
+        "src/utils/phone.ts",
+        "src/utils/timeTracking.ts",
+        "src/hooks/use-mobile.tsx",
+        "src/hooks/use-toast.ts",
+        "src/hooks/usePermissions.ts",
+        "src/hooks/useRegistrationStatus.ts"
+      ]
+    },
+    {
+      "name": "Theme Management",
+      "description": "إدارة الثيمات والوضع الليلي",
+      "files": [
+        "src/components/ThemeToggle.tsx",
+        "src/app/globals.css"
+      ]
+    },
+    {
+      "name": "Export Functionality",
+      "description": "تصدير البيانات والتقارير",
+      "files": [
+        "src/components/common/ExportDialog.tsx",
+        "src/utils/export.ts"
+      ]
+    },
+    {
+      "name": "Permission System",
+      "description": "نظام الصلاحيات والأدوار",
+      "files": [
+        "src/components/common/PermissionGuard.tsx",
+        "src/components/common/RoleBasedRoute.tsx",
+        "src/hooks/usePermissions.ts"
+      ]
+    }
+  ]
+}

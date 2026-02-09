@@ -1,0 +1,51 @@
+{
+  "projectName": "SP Laundry Management System",
+  "projectType": "nextjs",
+  "baseUrl": "http://localhost:3000",
+  "testFramework": "playwright",
+  "language": "typescript",
+  "features": [
+    "authentication",
+    "dashboard",
+    "customer-management",
+    "invoice-management",
+    "employee-management",
+    "device-management",
+    "product-management",
+    "financial-reports",
+    "attendance-tracking",
+    "salary-management"
+  ],
+  "routes": [
+    "/",
+    "/auth",
+    "/dashboard",
+    "/dashboard/cashier",
+    "/dashboard/invoices",
+    "/dashboard/customers",
+    "/dashboard/departments",
+    "/dashboard/subitems",
+    "/dashboard/services",
+    "/dashboard/employees",
+    "/dashboard/coupons",
+    "/dashboard/financial",
+    "/dashboard/reports",
+    "/dashboard/settings",
+    "/dashboard/attendance",
+    "/dashboard/salaries",
+    "/dashboard/devices",
+    "/dashboard/products"
+  ],
+  "testScenarios": [
+    "User authentication and authorization",
+    "Dashboard navigation and data display",
+    "Customer CRUD operations",
+    "Invoice creation and management",
+    "Employee management",
+    "Device tracking and status",
+    "Product inventory management",
+    "Financial reporting",
+    "Attendance tracking",
+    "Salary calculations"
+  ]
+}

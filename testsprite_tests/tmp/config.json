@@ -1,0 +1,17 @@
+{
+  "status": "commited",
+  "type": "frontend",
+  "scope": "codebase",
+  "localEndpoint": "http://localhost:3000",
+  "executionArgs": {
+    "projectName": "sp-landary-9aa71799-main",
+    "projectPath": "E:\\Nextjs-Project\\sp-landary-9aa71799-main\\sp-landary-9aa71799-main",
+    "testIds": [],
+    "additionalInstruction": "اكتشف جميع الأخطاء في التطبيق وأصلحها تلقائياً. ركز على الأخطاء في الوظائف الأساسية مثل المصادقة، لوحة التحكم، إدارة العملاء، والفواتير.",
+    "envs": {
+      "API_KEY": "sk-user-j3RLO01ZjXtQExpUkzf8kDwVe22irYjlaScWxx47pBVktQ156lxw30B-36MypdUF8-gUNa6-SNMoKLfXiYTPrJHsqDXO3bWdU3vW_8DN5Y-9QYh-9Se_epvYas1EeyTox9g"
+    }
+  },
+  "serverPort": 22095,
+  "proxy": "http://e062f60a-c961-435d-b299-7c30d154dff4:9Qa518e119ImQUr0WOclkRsA3Sjs5Vk8@tun.testsprite.com:8080"
+}

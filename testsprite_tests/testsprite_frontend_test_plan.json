@@ -1,0 +1,806 @@
+[
+  {
+    "id": "TC001",
+    "title": "Successful user login with valid credentials",
+    "description": "Verify that users can log in successfully using valid username and password and are redirected to the appropriate dashboard based on their role.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter valid username and password for a standard user"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "User is logged in successfully and redirected to the user dashboard"
+      },
+      {
+        "type": "action",
+        "description": "Log out"
+      },
+      {
+        "type": "action",
+        "description": "Repeat login for an admin user with valid credentials"
+      },
+      {
+        "type": "assertion",
+        "description": "Admin user is logged in successfully and redirected to the admin panel"
+      }
+    ]
+  },
+  {
+    "id": "TC002",
+    "title": "Failed login attempt with invalid credentials",
+    "description": "Verify that login fails and displays an appropriate error message when invalid username or password is entered.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to the login page"
+      },
+      {
+        "type": "action",
+        "description": "Enter invalid username and/or password"
+      },
+      {
+        "type": "action",
+        "description": "Click the login button"
+      },
+      {
+        "type": "assertion",
+        "description": "Login fails and error message is displayed indicating invalid credentials"
+      }
+    ]
+  },
+  {
+    "id": "TC003",
+    "title": "Role-based access control enforcement",
+    "description": "Verify that users cannot access pages or perform actions outside their assigned role permissions.",
+    "category": "security",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as a cashier user"
+      },
+      {
+        "type": "action",
+        "description": "Attempt to navigate to the Admin Panel URL directly"
+      },
+      {
+        "type": "assertion",
+        "description": "Access is denied and unauthorized or forbidden error page is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Log in as an employee without admin rights"
+      },
+      {
+        "type": "action",
+        "description": "Try to perform admin-only actions like user management"
+      },
+      {
+        "type": "assertion",
+        "description": "Action is blocked and an error or permission denied message is shown"
+      }
+    ]
+  },
+  {
+    "id": "TC004",
+    "title": "Dashboard statistics display accurate real-time data",
+    "description": "Verify that dashboard widgets and charts display correct statistics reflecting recent orders, revenue, attendance, and other operational metrics.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as a manager or admin user"
+      },
+      {
+        "type": "assertion",
+        "description": "Dashboard widgets display accurate counts for new orders, revenue, employee attendance"
+      },
+      {
+        "type": "action",
+        "description": "Create a new order through the cashier interface"
+      },
+      {
+        "type": "assertion",
+        "description": "Dashboard statistics update to reflect the new order in real-time or upon refresh"
+      },
+      {
+        "type": "action",
+        "description": "Log employee attendance for the day"
+      },
+      {
+        "type": "assertion",
+        "description": "Attendance stats on the dashboard reflect the logged attendance correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC005",
+    "title": "Customer Management CRUD operations",
+    "description": "Verify creation, reading, update, and deletion of customer records including viewing order history.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Customer Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create a new customer with valid details"
+      },
+      {
+        "type": "assertion",
+        "description": "Customer is created and appears in the customer list"
+      },
+      {
+        "type": "action",
+        "description": "Select the created customer and update their details"
+      },
+      {
+        "type": "assertion",
+        "description": "Customer details are updated correctly and persisted"
+      },
+      {
+        "type": "action",
+        "description": "View the customer's order history"
+      },
+      {
+        "type": "assertion",
+        "description": "Order history displays correctly with accurate data"
+      },
+      {
+        "type": "action",
+        "description": "Delete the customer record"
+      },
+      {
+        "type": "assertion",
+        "description": "Customer is removed from the list and cannot be accessed"
+      }
+    ]
+  },
+  {
+    "id": "TC006",
+    "title": "Invoice and Order Management workflow",
+    "description": "Verify that cashier can create invoices with selected customers and items, track order status, and preview/print invoices.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as cashier and navigate to cashier interface"
+      },
+      {
+        "type": "action",
+        "description": "Select an existing customer or add a new customer"
+      },
+      {
+        "type": "action",
+        "description": "Add services and products to the cart with quantities and prices"
+      },
+      {
+        "type": "action",
+        "description": "Submit the order and create an invoice"
+      },
+      {
+        "type": "assertion",
+        "description": "Invoice is created with correct details and status set as pending"
+      },
+      {
+        "type": "action",
+        "description": "Preview the created invoice"
+      },
+      {
+        "type": "assertion",
+        "description": "Invoice preview displays all order details formatted properly"
+      },
+      {
+        "type": "action",
+        "description": "Print the invoice"
+      },
+      {
+        "type": "assertion",
+        "description": "Printable invoice is generated without errors"
+      },
+      {
+        "type": "action",
+        "description": "Update order status to completed or processing"
+      },
+      {
+        "type": "assertion",
+        "description": "Order status updates correctly and reflects on the invoice list"
+      }
+    ]
+  },
+  {
+    "id": "TC007",
+    "title": "Department and Sub-item Management CRUD operations",
+    "description": "Verify creating, editing, and deleting departments and their corresponding sub-items are functioning correctly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Department Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create a new department with valid fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Department is added to the list successfully"
+      },
+      {
+        "type": "action",
+        "description": "Edit department details"
+      },
+      {
+        "type": "assertion",
+        "description": "Changes are saved and reflected in the department list"
+      },
+      {
+        "type": "action",
+        "description": "Delete a department and confirm deletion"
+      },
+      {
+        "type": "assertion",
+        "description": "Department is removed and no longer accessible"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Sub-item Management under a department"
+      },
+      {
+        "type": "action",
+        "description": "Add new sub-items and edit/delete existing ones"
+      },
+      {
+        "type": "assertion",
+        "description": "Sub-items CRUD operations function properly with correct data binding"
+      }
+    ]
+  },
+  {
+    "id": "TC008",
+    "title": "Employee Management and Attendance tracking",
+    "description": "Verify adding employees, assigning roles, tracking attendance, and viewing attendance reports.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Employee Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create a new employee record with role assignment"
+      },
+      {
+        "type": "assertion",
+        "description": "Employee appears in the list with correct role"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Attendance Tracking page"
+      },
+      {
+        "type": "action",
+        "description": "Log attendance for the employee including clock-in and clock-out times"
+      },
+      {
+        "type": "assertion",
+        "description": "Attendance records are saved and listed correctly"
+      },
+      {
+        "type": "action",
+        "description": "Generate attendance report for a selected period"
+      },
+      {
+        "type": "assertion",
+        "description": "Report contains accurate attendance data for employees"
+      }
+    ]
+  },
+  {
+    "id": "TC009",
+    "title": "Salary Management CRUD and calculation validation",
+    "description": "Verify correct CRUD operations on salary records and that salary calculations reflect attendance and role info.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Salary Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create a salary record for an employee with base salary and bonuses"
+      },
+      {
+        "type": "assertion",
+        "description": "Salary record is saved and correctly associated with the employee"
+      },
+      {
+        "type": "action",
+        "description": "Edit the salary details and update bonuses or deductions"
+      },
+      {
+        "type": "assertion",
+        "description": "Updates are saved and shown correctly"
+      },
+      {
+        "type": "action",
+        "description": "Validate that salary amounts correspond to attendance records and role-based pay rates"
+      },
+      {
+        "type": "assertion",
+        "description": "Salary values reflect calculations as per business logic"
+      }
+    ]
+  },
+  {
+    "id": "TC010",
+    "title": "Product and Supplier Management CRUD operations",
+    "description": "Verify that products and suppliers can be added, edited, and deleted with correct data integrity.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Product Management page"
+      },
+      {
+        "type": "action",
+        "description": "Add new product with name, category, price, and stock quantity"
+      },
+      {
+        "type": "assertion",
+        "description": "Product appears in the list and details are accurate"
+      },
+      {
+        "type": "action",
+        "description": "Edit product details including price and stock"
+      },
+      {
+        "type": "assertion",
+        "description": "Changes are saved and reflected"
+      },
+      {
+        "type": "action",
+        "description": "Delete a product and confirm removal"
+      },
+      {
+        "type": "assertion",
+        "description": "Product is removed from the inventory"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Supplier Management page"
+      },
+      {
+        "type": "action",
+        "description": "Add a new supplier with contact details"
+      },
+      {
+        "type": "assertion",
+        "description": "Supplier is listed with correct information"
+      },
+      {
+        "type": "action",
+        "description": "Edit and delete supplier entries"
+      },
+      {
+        "type": "assertion",
+        "description": "Supplier data updates and removal works correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC011",
+    "title": "Financial Management operations and error handling",
+    "description": "Verify management and viewing of financial transactions including revenues, expenses, and payments. Verify error messages on invalid input.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Financial Management page"
+      },
+      {
+        "type": "action",
+        "description": "Add a new revenue entry with valid amount, date, and description"
+      },
+      {
+        "type": "assertion",
+        "description": "Revenue is listed and totals are updated"
+      },
+      {
+        "type": "action",
+        "description": "Add an expense entry with missing mandatory fields"
+      },
+      {
+        "type": "assertion",
+        "description": "Form validation prevents submission and error messages are shown"
+      },
+      {
+        "type": "action",
+        "description": "Add a valid expense entry"
+      },
+      {
+        "type": "assertion",
+        "description": "Expense is recorded and financial summary reflects it correctly"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Payments page"
+      },
+      {
+        "type": "action",
+        "description": "Record a payment against a customer invoice"
+      },
+      {
+        "type": "assertion",
+        "description": "Payment is saved and invoice payment status updates correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC012",
+    "title": "Coupon Management lifecycle",
+    "description": "Verify creation, editing, activation/deactivation, and deletion of discount coupons with validation.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Coupon Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create a new coupon with code, discount value, expiry date and usage limits"
+      },
+      {
+        "type": "assertion",
+        "description": "Coupon is listed and details are correct"
+      },
+      {
+        "type": "action",
+        "description": "Edit coupon properties such as discount amount and expiry"
+      },
+      {
+        "type": "assertion",
+        "description": "Changes save correctly and reflect in the list"
+      },
+      {
+        "type": "action",
+        "description": "Deactivate and then reactivate the coupon"
+      },
+      {
+        "type": "assertion",
+        "description": "Coupon status updates properly"
+      },
+      {
+        "type": "action",
+        "description": "Delete the coupon"
+      },
+      {
+        "type": "assertion",
+        "description": "Coupon is removed from the system"
+      }
+    ]
+  },
+  {
+    "id": "TC013",
+    "title": "Reports generation and data accuracy",
+    "description": "Verify that various reports including customer reports, financial reports, and operational reports generate correctly with accurate data and support filtering and exporting.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Reports page"
+      },
+      {
+        "type": "action",
+        "description": "Generate a customer report for a specified time range"
+      },
+      {
+        "type": "assertion",
+        "description": "Report displays accurate customer activity data matching the database"
+      },
+      {
+        "type": "action",
+        "description": "Generate financial report with filters for revenues and expenses"
+      },
+      {
+        "type": "assertion",
+        "description": "Report data sums and details are correct"
+      },
+      {
+        "type": "action",
+        "description": "Generate operational report showing order status and employee participation"
+      },
+      {
+        "type": "assertion",
+        "description": "Operational data matches expected workload and order counts"
+      },
+      {
+        "type": "action",
+        "description": "Export each report to CSV or Excel"
+      },
+      {
+        "type": "assertion",
+        "description": "Exported files contain complete and formatted data corresponding to the displayed reports"
+      }
+    ]
+  },
+  {
+    "id": "TC014",
+    "title": "Work Sections attendance and tracking",
+    "description": "Verify employees can log work times under different laundry sections (e.g., receiving, sorting, washing, ironing) and status updates are tracked.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Work Sections page"
+      },
+      {
+        "type": "action",
+        "description": "Select a work section and log-in an employee's attendance with start time"
+      },
+      {
+        "type": "assertion",
+        "description": "Attendance for that work section is recorded and displayed"
+      },
+      {
+        "type": "action",
+        "description": "Log the employee's end time or status update"
+      },
+      {
+        "type": "assertion",
+        "description": "Attendance time and work session status updates are saved correctly"
+      }
+    ]
+  },
+  {
+    "id": "TC015",
+    "title": "System and Profile Settings update and persistence",
+    "description": "Verify that users can update system-wide and personal profile settings, and changes are persisted across sessions.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to System Settings page as admin"
+      },
+      {
+        "type": "action",
+        "description": "Modify settings such as laundry details or notification preferences"
+      },
+      {
+        "type": "action",
+        "description": "Save changes"
+      },
+      {
+        "type": "assertion",
+        "description": "Changes persist and are accurately reflected when revisiting settings"
+      },
+      {
+        "type": "action",
+        "description": "Navigate to Profile Settings for a user"
+      },
+      {
+        "type": "action",
+        "description": "Update profile info such as email, phone number, or password"
+      },
+      {
+        "type": "assertion",
+        "description": "Profile changes are saved, and user can log in with updated information"
+      }
+    ]
+  },
+  {
+    "id": "TC016",
+    "title": "Admin Panel functionality and user management",
+    "description": "Verify that admins can manage users, laundries, registrations, and system settings and view analytics without permission leaks.",
+    "category": "functional",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in as admin and navigate to the Admin Panel"
+      },
+      {
+        "type": "action",
+        "description": "Access user management and view user list"
+      },
+      {
+        "type": "action",
+        "description": "Create a new user with admin or staff roles"
+      },
+      {
+        "type": "assertion",
+        "description": "User is created with the assigned role and appears in list"
+      },
+      {
+        "type": "action",
+        "description": "Edit user roles and permissions"
+      },
+      {
+        "type": "assertion",
+        "description": "Permissions update properly and restrict/allow access accordingly"
+      },
+      {
+        "type": "action",
+        "description": "Access laundries and registration requests, approve or reject requests"
+      },
+      {
+        "type": "assertion",
+        "description": "Changes reflect correctly and notifications are sent to users"
+      },
+      {
+        "type": "action",
+        "description": "View analytics dashboard for platform-wide reports"
+      },
+      {
+        "type": "assertion",
+        "description": "Analytics charts and data load accurately without errors"
+      }
+    ]
+  },
+  {
+    "id": "TC017",
+    "title": "Subscription and Package Management flows",
+    "description": "Verify that subscription plans and packages can be created, selected, renewed, and canceled, with status updates reflected properly.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Subscription Management page"
+      },
+      {
+        "type": "action",
+        "description": "Create new subscription plans and packages with pricing and duration"
+      },
+      {
+        "type": "assertion",
+        "description": "New plans appear in the list correctly"
+      },
+      {
+        "type": "action",
+        "description": "Select a subscription plan for a customer and subscribe"
+      },
+      {
+        "type": "assertion",
+        "description": "Subscription status updates to active and billing info is correct"
+      },
+      {
+        "type": "action",
+        "description": "Renew an existing subscription before expiry"
+      },
+      {
+        "type": "assertion",
+        "description": "Subscription expiry date extends and renewal is recorded"
+      },
+      {
+        "type": "action",
+        "description": "Cancel a subscription and verify cancellation process"
+      },
+      {
+        "type": "assertion",
+        "description": "Subscription status updates to canceled and customer is restricted accordingly"
+      }
+    ]
+  },
+  {
+    "id": "TC018",
+    "title": "Theme management and dark mode toggle",
+    "description": "Verify the ability to toggle between light and dark themes, save the preference, and persist across sessions.",
+    "category": "ui",
+    "priority": "Low",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Log in and navigate to any page with theme toggle"
+      },
+      {
+        "type": "action",
+        "description": "Toggle the theme from light to dark mode"
+      },
+      {
+        "type": "assertion",
+        "description": "UI changes to dark mode correctly with all components rendered properly"
+      },
+      {
+        "type": "action",
+        "description": "Reload the page or log out and log back in"
+      },
+      {
+        "type": "assertion",
+        "description": "Dark mode preference persists and UI remains in dark mode"
+      },
+      {
+        "type": "action",
+        "description": "Toggle back to light mode and verify changes and persistence again"
+      }
+    ]
+  },
+  {
+    "id": "TC019",
+    "title": "Error handling for unauthorized and server error pages",
+    "description": "Verify that error pages for unauthorized access (401, 403) and server errors (500) display appropriate messages and UI components.",
+    "category": "error handling",
+    "priority": "High",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Attempt to access restricted pages without login"
+      },
+      {
+        "type": "assertion",
+        "description": "401 Unauthorized error page is displayed"
+      },
+      {
+        "type": "action",
+        "description": "Log in with insufficient privileges and try to access forbidden pages"
+      },
+      {
+        "type": "assertion",
+        "description": "403 Forbidden error page is shown"
+      },
+      {
+        "type": "action",
+        "description": "Simulate server errors by causing backend failure or API error"
+      },
+      {
+        "type": "assertion",
+        "description": "500 Internal Server Error page is shown with meaningful message"
+      }
+    ]
+  },
+  {
+    "id": "TC020",
+    "title": "Data export functionality for reports and customers",
+    "description": "Verify that users can export report and customer data correctly to supported formats (e.g., CSV) and that files contain complete and accurate data.",
+    "category": "functional",
+    "priority": "Medium",
+    "steps": [
+      {
+        "type": "action",
+        "description": "Navigate to Customer Management or Reports page"
+      },
+      {
+        "type": "action",
+        "description": "Use export dialog to select data range and export options"
+      },
+      {
+        "type": "action",
+        "description": "Export data as CSV file"
+      },
+      {
+        "type": "assertion",
+        "description": "Exported file downloads successfully and data content matches displayed data including headers and field values"
+      },
+      {
+        "type": "action",
+        "description": "Repeat export with different filters and verify data correctness"
+      }
+    ]
+  }
+]
